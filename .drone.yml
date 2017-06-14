@@ -1,5 +1,12 @@
 pipeline:
-  backend:
+  clone:
+    image: alpine
+    commands:
+      - cat /etc/resolv.conf
+      - hostname
+      - host github.com
+
+  build:
     image: golang
     commands:
       - make
