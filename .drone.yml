@@ -4,4 +4,3 @@ pipeline:
     commands:
       - make
       - make test
-
