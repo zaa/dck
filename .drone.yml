@@ -2,4 +2,5 @@ pipeline:
   build:
     image: golang
     commands:
+      - echo re
       - make test
