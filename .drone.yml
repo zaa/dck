@@ -5,7 +5,7 @@ pipeline:
       - echo should only be run on the prod cluster
     when:
       matrix:
-        CLUSTER: admin
+        CLUSTER: prod
 
   build:
     image: alpine:3.6
