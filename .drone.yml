@@ -1,6 +1,19 @@
 pipeline:
-  build:
-    image: golang
+  only-on-prod:
+    image: alpine:3.6
     commands:
-      - echo re
-      - make test
+      - echo should only be run on the prod cluster
+    when:
+      matrix:
+        CLUSTER: admin
+
+  build:
+    image: alpine:3.6
+    commands:
+      - echo ${CLUSTER}
+
+matrix:
+  CLUSTER:
+    - admin
+    - stage
+    - prod
