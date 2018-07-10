@@ -1,11 +1,5 @@
 pipeline:
-  build:
+  test:
     image: alpine:3.6
     commands:
-      - echo ${CLUSTER}
-
-matrix:
-  CLUSTER:
-    - admin
-    - stage
-    - prod
+      - echo test
